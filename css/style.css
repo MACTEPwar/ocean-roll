@@ -1,0 +1,170 @@
+html,
+body {
+    margin: 0;
+    padding: 0
+}
+
+.header {
+    background-color: white;
+    width: 100%;
+    height: 75px;
+    box-shadow: 0px -4px 22px -2px black;
+}
+
+.top_menu li {
+    display: inline-block;
+}
+
+.logo,
+.top_menu {
+    display: inline-block;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.top_menu a {
+    font-family: Arial;
+    font-size: 20px;
+    color: black;
+    margin: 20px;
+    position: relative;
+    bottom: 10px;
+}
+
+.logo {
+    font-family: Arial;
+    color: black;
+    position: relative;
+    bottom: 10px;
+}
+
+.lypa {
+    width: 32px;
+}
+
+.korzina {
+    width: 24px;
+
+}
+
+.ocean {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    top: 10px;
+    right: 5px;
+}
+
+.reklama {
+    width: 1150px;
+    height: 570px;
+    background-color: red;
+    margin: auto;
+    position: relative;
+    top: 50px;
+    border-radius: 15px;
+}
+
+.rek {
+    width: 1150px;
+    height: 570px;
+    border-radius: 15px;
+}
+
+.assort {
+    text-align: center;
+    position: relative;
+    top: 30px;
+    right: 222px;
+    font-family: arial;
+    font-size: 30px;
+}
+
+.priv {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+}
+
+.dot {
+    display: flex;
+    justify-content: center;
+    color: black;
+    position: relative;
+    top: 100px;
+}
+
+
+
+
+nav .nav-cont {
+    max-width: 1150px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav .nav-cont .nav-item {
+    margin: auto;
+}
+
+main#content {
+    margin-top: 64px;
+    max-width: 1150px;
+}
+
+.slide-rounded {
+    border-radius: 15px;
+}
+
+.page-item-title {
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.menu-categories {
+    display: flex;
+    justify-content: center;
+}
+
+.menu-categories .category-item {
+    width: 110px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.25);
+    margin-left: 15px;
+    ;
+    margin-right: 15px;
+    ;
+}
+
+.menu-categories .category-item .icon {}
+
+.menu-categories .category-item .name {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.advantages {
+    display: flex;
+    justify-content: center;
+}
+
+.advantages .advantage {
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+    background-image: url('../images/delivery-truck.png');
+    background-size: 100% auto;
+    margin-left: 57px;
+    margin-right: 57px;
+}
+
+.advantages .advantage span {
+    bottom: 0;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+}
