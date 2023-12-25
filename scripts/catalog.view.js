@@ -5,7 +5,7 @@ $(document).ready(() => {
 
     const resDOM = data.map((item) => {
       return `
-        <div class="col-3">
+        <div class="col-3 py-2">
             <div
             class="card br-15"
             style="box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25)"
