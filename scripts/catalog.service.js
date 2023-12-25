@@ -10,12 +10,11 @@ class CatalogService {
             
 
             products = products.slice(filter.skip, filter.skip + filter.take)
-            console.log(products)
-            scCallback(data.slice(filter.skip, filter.take));
+            scCallback(products);
         })
     }
 
-    getMockProducts(scCallback, erCallback){
+    getMockProducts(scCallback, erCallback){    
         $.ajax({
             url: './data/products.json',
             method: "GET",
