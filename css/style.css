@@ -152,10 +152,20 @@ main#content {
   justify-content: center;
   width: 300px;
   height: 300px;
-  background-image: url("../images/delivery-truck.png");
+  /* background-image: url("../images/delivery-truck.png"); */
   background-size: 100% auto;
   margin-left: 57px;
   margin-right: 57px;
+}
+
+.advantages .advantage.abv1 {
+  background-image: url("../images/delivery-truck.png");
+}
+.advantages .advantage.abv2 {
+  background-image: url("../images/humansit.png");
+}
+.advantages .advantage.abv3 {
+  background-image: url("../images/money.png");
 }
 
 .advantages .advantage span {
