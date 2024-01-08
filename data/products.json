@@ -4,58 +4,154 @@
     "label": "суши",
     "prodcuts": [
       {
-        "bar": "0001",
+        "bar": "1001",
         "name": "Гункан Сяке Спайс",
         "price": 150,
-        "img": null
+        "img": "GunkanXiakeSpice.jpg"
       },
       {
-        "bar": "0002",
-        "name": "Гункан Сяке Спайс",
-        "price": 150,
-        "img": null
+        "bar": "1002",
+        "name": "Суши угорь",
+        "price": 300,
+        "img": "SushiEel.jpg"
       },
       {
-        "bar": "0003",
-        "name": "Гункан Сяке Спайс",
-        "price": 150,
-        "img": null
+        "bar": "1003",
+        "name": "Суши креветка",
+        "price": 180,
+        "img": "SushiShrimp.jpg"
       },
       {
-        "bar": "0004",
-        "name": "Гункан Сяке Спайс",
-        "price": 150,
-        "img": null
+        "bar": "1004",
+        "name": "Суши лосось",
+        "price": 200,
+        "img": "SushiSalmon.jpg"
       },
       {
-        "bar": "0005",
-        "name": "Гункан Сяке Спайс",
-        "price": 150,
-        "img": null
+        "bar": "1005",
+        "name": "Суши Тунец",
+        "price": 180,
+        "img": "SushiTuna.jpg"
       },
       {
-        "bar": "0006",
-        "name": "Гункан Сяке Спайс",
+        "bar": "1006",
+        "name": "Гункан Тобика",
         "price": 150,
-        "img": null
+        "img": "GunkanTobika.jpg"
       },
       {
-        "bar": "0007",
-        "name": "Гункан Сяке Спайс",
+        "bar": "1007",
+        "name": "Гункан Икура",
         "price": 150,
-        "img": null
+        "img": "GunkanIkura.jpg"
       },
       {
-        "bar": "0008",
-        "name": "Гункан Сяке Спайс",
-        "price": 150,
-        "img": null
+        "bar": "1008",
+        "name": "Гункан Унаги угорь",
+        "price": 180,
+        "img": "GunkanUnagitheeel.jpg"
       },
       {
-        "bar": "0009",
-        "name": "Гункан Сяке Спайс",
+        "bar": "1009",
+        "name": "Гункан Эби Чиз",
+        "price": 180,
+        "img": "GunkanAbiCheese.jpg"
+      },
+      {
+        "bar": "1010",
+        "name": "Гункан Магуро Спайс",
         "price": 150,
-        "img": null
+        "img": "GunkanMaguroSpice.jpg"
+      }
+    ]
+  },
+  {
+    "id": "Japanesesoups",
+    "label": "Японские супы",
+    "prodcuts": [
+      {
+        "bar": "2001",
+        "name": "Мисо Сиру с угрем",
+        "price": 600,
+        "img": "MisoSiruwitheel.jpg"
+      },
+      {
+        "bar": "2002",
+        "name": "Мисо Сиру с тунцом",
+        "price": 550,
+        "img": "Miso Siru with tuna.jpg"
+      },
+      {
+        "bar": "2003",
+        "name": "Мисо Сиру с лососем",
+        "price": 600,
+        "img": "Misoshiru with salmon.jpg"
+      }
+    ]
+  },
+  {
+    "id": "Rolls",
+    "label": "Роллы",
+    "prodcuts": [
+      {
+        "bar": "3001",
+        "name": "Ролл Кампай Маки",
+        "price": 600,
+        "img": "RollKampaiMaki.jpg"
+      },
+      {
+        "bar": "3002",
+        "name": "Сяке Кани Маки",
+        "price": 800,
+        "img": "ShakeKaniMaki.jpg"
+      },
+      {
+        "bar": "3003",
+        "name": "Кани Футо Маки",
+        "price": 550,
+        "img": "KaniFutoMaki.jpg"
+      }
+    ]
+  },
+  {
+    "id": "Pizza",
+    "label": "Пиццы",
+    "prodcuts": [
+      {
+        "bar": "4001",
+        "name": "Гавайская 40 см",
+        "price": 800,
+        "img": "Hawaiian40cm.jpg"
+      },
+      {
+        "bar": "4002",
+        "name": "Арабиатта 30 см",
+        "price": 550,
+        "img": "Arabiatta30cm.jpg"
+      },
+      {
+        "bar": "4003",
+        "name": "Капричоза 30 см",
+        "price": 500,
+        "img": "Capricious30cm.jpg"
+      }
+    ]
+  },
+  {
+    "id": "Tyakhan",
+    "label": "Тяхан",
+    "prodcuts": [
+      {
+        "bar": "5001",
+        "name": "Тяхан с овощами",
+        "price": 450,
+        "img": "Tyakhanwithvegetables.jpg"
+      },
+      {
+        "bar": "5002",
+        "name": "Тяхан с курицей",
+        "price": 600,
+        "img": "Tyakhanwithchicken.jpg"
       }
     ]
   }
