@@ -6,6 +6,7 @@ class PagingService {
 
     $(".pagination").on("click", ".page-item", (e) => {
       const page = $(e.currentTarget).data("page");
+      // alert(page)
       this.onChangePage(page);
     });
   }
@@ -16,7 +17,16 @@ class PagingService {
         ? ((countAll / this.take) | 0) + 1
         : countAll / this.take;
 
-    this.currentPage = this.countPages - this.skip / this.take;
+    this.currentPage = this.skip / this.take;
+
+    console.log(
+      "t",
+      countAll,
+      this.countPages,
+      this.currentPage,
+      this.skip,
+      this.take
+    );
 
     return `
       <li class="page-item" data-page="first">
@@ -39,7 +49,9 @@ class PagingService {
     return Array.from({ length: n }, (_, index) => index + 1)
       .map(
         (m) =>
-          ` <li class="page-item" data-page="${m}"><a class="page-link" href="#">${m}</a></li>`
+          ` <li class="page-item ${
+            this.currentPage === m - 1 ? "active" : ""
+          }" data-page="${m}"><a class="page-link" href="#">${m}</a></li>`
       )
       .join("\n");
   }

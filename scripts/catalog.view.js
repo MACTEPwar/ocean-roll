@@ -13,6 +13,7 @@ $(document).ready(() => {
   // event for laod any category
   $(".menu-categories .category-item").on("click", (e) => {
     currentGroup = $(e.currentTarget).data("category-name");
+    pagingService.skip = 0;
     $(".menu-categories .category-item.active").removeClass("active");
     $(e.currentTarget).addClass("active");
     loadData();
