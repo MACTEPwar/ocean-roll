@@ -1,13 +1,21 @@
 let pagingService = null;
-$(document).ready(() => {
-  pagingService = new PagingService(onChangePageCb);
 
-  onChangePageCb();
+let currentGroup = "sushi";
+
+$(document).ready(() => {
+  pagingService = new PagingService(loadData);
+
+  loadData();
+
+  $(".menu-categories .category-item").on("click", (e) => {
+    currentGroup = $(e.currentTarget).data("category-name");
+    loadData();
+  });
 });
 
-function onChangePageCb() {
+function loadData() {
   catalogService.getProductsByFilter(
-    { skip: pagingService.skip, take: pagingService.take },
+    { skip: pagingService.skip, take: pagingService.take, group: currentGroup },
     (data) => {
       $("#catalogContent").html("");
 

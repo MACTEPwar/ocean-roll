@@ -4,7 +4,7 @@ class CatalogService {
       filter = filter ?? {};
       filter.skip = filter.skip ?? 0;
       filter.take = filter.take ?? -1;
-      filter.group = "sushi";
+    //   filter.group = "sushi";
 
       let products = data.find((f) => f.id === filter.group).prodcuts;
 
