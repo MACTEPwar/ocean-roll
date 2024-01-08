@@ -5,10 +5,16 @@ let currentGroup = "sushi";
 $(document).ready(() => {
   pagingService = new PagingService(loadData);
 
+  // load default category
+  $(".menu-categories .category-item.active").removeClass("active");
+  $('.menu-categories .category-item[data-category-name=sushi]').addClass("active");
   loadData();
 
+  // event for laod any category
   $(".menu-categories .category-item").on("click", (e) => {
     currentGroup = $(e.currentTarget).data("category-name");
+    $(".menu-categories .category-item.active").removeClass("active");
+    $(e.currentTarget).addClass("active");
     loadData();
   });
 });
