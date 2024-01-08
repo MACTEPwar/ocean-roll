@@ -6,6 +6,9 @@ class CatalogService {
       filter.take = filter.take ?? -1;
 
       let products = data.find((f) => f.id === filter.group)?.prodcuts ?? [];
+      if (products.length === 0) {
+        alert('Нет товаров')
+      }
       let count = products.length;
 
       products = products.slice(filter.skip, filter.skip + filter.take);
