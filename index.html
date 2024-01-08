@@ -38,64 +38,96 @@
 	</body>
 </html> -->
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>OceanRoll</title>
+    <link rel="SHORTCUT ICON" href="./images/Логотип.png" type="image/x-icon" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="./css/style.css">
-	<title>OceanRoll</title>
-	<link rel="SHORTCUT ICON" href="./images/Логотип.png" type="image/x-icon">
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light position-fixed w-100 fixed-top"
+    >
+      <div class="nav-cont">
+        <a class="navbar-brand d-flex" href="#">
+          <img
+            class="my-auto"
+            src="./images/Океан.png"
+            width="30"
+            height="30"
+            class="d-inline-block align-top"
+            alt=""
+          />
+          <span class="my-auto">OceanRoll</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="#" id="main">Главная</a>
+            <a class="nav-item nav-link" href="#" id="catalog">Меню</a>
+            <a class="nav-item nav-link" href="#" id="about">О нас</a>
+            <a class="nav-item nav-link" href="#" id="contacts">Контакты</a>
+            <a class="nav-item nav-link">+ 7 (949) 721 16 94</a>
+            <a class="nav-item nav-link" href="#"
+              ><img src="./images/Лупа.png" class="lypa"
+            /></a>
+            <a class="nav-item nav-link" href="#"
+              ><img src="./images/Корзина.png" class="korzina"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main id="content" class="mx-auto d-flex flex-column"></main>
 
-<body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light position-fixed w-100 fixed-top">
-		<div class="nav-cont">
-			<a class="navbar-brand d-flex" href="#">
-				<img class="my-auto" src="./images/Океан.png" width="30" height="30" class="d-inline-block align-top" alt="" />
-				<span class="my-auto">OceanRoll</span> 
-			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div class="navbar-nav">
-					<a class="nav-item nav-link" href="#" id="main">Главная</a>
-					<a class="nav-item nav-link" href="#" id="catalog">Меню</a>
-					<a class="nav-item nav-link" href="#" id="about">О нас</a>
-					<a class="nav-item nav-link" href="#" id="contacts">Контакты</a>
-					<a class="nav-item nav-link">+ 7 (949) 721 16 94</a>
-					<a class="nav-item nav-link" href="#"><img src="./images/Лупа.png" class="lypa"></a>
-					<a class="nav-item nav-link" href="#"><img src="./images/Корзина.png" class="korzina"></a>
-				</div>
-			</div>
-		</div>
-	</nav>
-	<main id="content" class="mx-auto d-flex flex-column"></main>
-
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-		integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-		crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-		crossorigin="anonymous"></script>
-
-	<script src="./scripts/comment.service.js"></script>
-	<script src="./scripts/catalog.service.js"></script>
-	<script src="./scripts/main.js"></script>
-</body>
-
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./scripts/paging.service.js"></script>
+    <script src="./scripts/comment.service.js"></script>
+    <script src="./scripts/catalog.service.js"></script>
+    <script src="./scripts/main.js"></script>
+  </body>
 </html>
