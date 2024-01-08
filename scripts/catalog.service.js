@@ -23,4 +23,21 @@ class CatalogService {
       error: (error) => erCallback,
     });
   }
+
+  getProdcutByBar(bar, scCallback, erCallback) {
+    $.ajax({
+      url: "./data/products.json",
+      method: "GET",
+      success: (data) => {
+        let prod = data
+          .reduce((acc, curr) => {
+            acc.push(...curr.prodcuts);
+            return acc;
+          }, [])
+          .find((f) => f.bar == bar);
+        scCallback(prod);
+      },
+      error: (error) => erCallback,
+    });
+  }
 }

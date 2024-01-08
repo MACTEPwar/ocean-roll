@@ -22,8 +22,14 @@ $(document).ready(() => {
   });
 
   $("#catalogContent").on("click", ".product-item", (e) => {
-    alert($(e.currentTarget).data("bar"));
+    // alert($(e.currentTarget).data("bar"));
+    const bar = $(e.currentTarget).data("bar");
+    openProduct(bar);
   });
+
+  $("#product-view").on('click', '.back-btn', () => {
+    $("#product-view").addClass("d-none");
+  })
 });
 
 function loadData() {
@@ -67,4 +73,59 @@ function loadData() {
       $("#catalogContent").append(resDOM);
     }
   );
+}
+
+function openProduct(bar) {
+  catalogService.getProdcutByBar(bar, (product) => {
+    // console.log('PRODUCT', product)
+    const productDOM = ` 
+      <div class="container">
+        <div class="back-btn d-flex ml-2">
+          <div class="img"><</div>
+          <span class="ml-2">Назад</span>
+        </div>
+        <div class="row product">
+          <div class="col-4">
+            <img src="./images/catalog/${product.img}" alt="" width="100%" height="100%" />
+          </div>
+          <div class="col-8">
+            <div class="row title">
+              <div class="col-12">
+                <span>${product.name}</span>
+              </div>
+            </div>
+            <div class="row my-3">
+              <div class="col-12">
+                <div class="ranger d-flex">
+                  <div class="btn minus">-</div>
+                  <div class="my-auto mx-3">1</div>
+                  <div class="btn plus">+</div>
+                </div>
+              </div>
+            </div>
+            <div class="row my-3">
+              <div class="col-12 d-flex">
+                <div class="button">В корзину</div>
+                <div class="button ml-2">Купить в один клик</div>
+              </div>
+            </div>
+            ${
+              product.desc ?
+              `<div class="row descr">
+                <div class="col-12">
+                  <span>` + product.desc + 
+                  `</span
+                  >
+                </div>
+              </div>` :
+              ''
+            }
+          </div>
+        </div>
+      </div>
+    `;
+    $("#product-view").html("");
+    $("#product-view").append(productDOM);
+    $("#product-view").removeClass("d-none");
+  });
 }
