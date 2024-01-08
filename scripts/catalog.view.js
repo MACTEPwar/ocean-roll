@@ -110,10 +110,10 @@ function openProduct(bar) {
               </div>
             </div>
             ${
-              product.desc ?
+              product.descr ?
               `<div class="row descr">
                 <div class="col-12">
-                  <span>` + product.desc + 
+                  <span>` + product.descr + 
                   `</span
                   >
                 </div>
