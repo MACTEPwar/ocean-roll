@@ -7,7 +7,9 @@ $(document).ready(() => {
 
   // load default category
   $(".menu-categories .category-item.active").removeClass("active");
-  $('.menu-categories .category-item[data-category-name=sushi]').addClass("active");
+  $(".menu-categories .category-item[data-category-name=sushi]").addClass(
+    "active"
+  );
   loadData();
 
   // event for laod any category
@@ -17,6 +19,10 @@ $(document).ready(() => {
     $(".menu-categories .category-item.active").removeClass("active");
     $(e.currentTarget).addClass("active");
     loadData();
+  });
+
+  $("#catalogContent").on("click", ".product-item", (e) => {
+    alert($(e.currentTarget).data("bar"));
   });
 });
 
@@ -31,8 +37,9 @@ function loadData() {
           return `
             <div class="col-3 py-2">
                 <div
-                class="card br-15"
-                style="box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25)"
+                class="card br-15 product-item"
+                style="box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25); cursor: pointer"
+                data-bar=${item.bar}
                 >
                     <div class="card-img-top" style="padding: 5px">
                         <img
