@@ -14,7 +14,7 @@ class ReceiptService {
       this.badgeDOM.removeClass("d-none");
       this.badgeDOM.addClass("d-flex");
     }
-    this.badgeDOM.html(`<span class="m-auto">${this.products.length}</span>`);
+    this.refreshBage();
   }
 
   getTotalPrice() {
@@ -30,5 +30,10 @@ class ReceiptService {
 
   remove(bar) {
     this.products = this.products.filter((f) => f.bar != bar);
+    this.refreshBage();
+  }
+
+  refreshBage() {
+    this.badgeDOM.html(`<span class="m-auto">${this.products.length}</span>`);
   }
 }
