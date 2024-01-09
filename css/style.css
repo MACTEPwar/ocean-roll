@@ -244,13 +244,6 @@ main#content {
   line-height: normal;
 }
 
-#product-view .container .product .ranger {
-  border-radius: 15px;
-  background: #fff;
-  box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.25);
-  width: fit-content;
-}
-
 #product-view .container .product .descr span {
   color: #000;
   font-size: 20px;
@@ -263,6 +256,10 @@ main#content {
   border-radius: 15px !important;
 }
 
+.bsh {
+  box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.25);
+}
+
 .button {
   border-radius: 15px;
   background: #cc9300;
@@ -271,6 +268,13 @@ main#content {
   font-size: 1rem;
   line-height: 1.5;
   cursor: pointer;
+}
+
+.ranger {
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.25);
+  width: fit-content;
 }
 
 .opacity-0 {
