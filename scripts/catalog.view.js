@@ -1,8 +1,8 @@
-let pagingService = null;
+var pagingService = null;
 
-let currentGroup = "sushi";
+var currentGroup = "sushi";
 
-let tempPosition = null;
+var tempPosition = null;
 
 $(document).ready(() => {
   pagingService = new PagingService(loadData);
@@ -53,7 +53,7 @@ $(document).ready(() => {
     backBtn();
   });
   $("#product-view").on("click", ".pay-one-click", () => {
-    alert("pay-one-click");
+    // alert("pay-one-click");
   });
 });
 
@@ -110,6 +110,8 @@ function openProduct(bar) {
       bar: bar,
       price: product.price,
       amount: 1,
+      name: product.name,
+      img: product.img,
     };
 
     const productDOM = ` 
