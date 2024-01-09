@@ -1,5 +1,6 @@
 const commentService = new CommentService();
 const catalogService = new CatalogService();
+const receiptService = new ReceiptService();
 
 $(document).ready(() => {
   $("nav .navbar-nav .nav-item").on("click", (e) => {
@@ -8,6 +9,8 @@ $(document).ready(() => {
   });
 
   loadPage("catalog");
+
+  receiptService.badgeDOM = $('#badge-cart')
 });
 
 function loadPage(page) {

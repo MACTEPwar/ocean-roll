@@ -2,6 +2,8 @@ let pagingService = null;
 
 let currentGroup = "sushi";
 
+let tempPosition = null;
+
 $(document).ready(() => {
   pagingService = new PagingService(loadData);
 
@@ -21,16 +23,43 @@ $(document).ready(() => {
     loadData();
   });
 
+  // onclick prodcut card
   $("#catalogContent").on("click", ".product-item", (e) => {
-    // alert($(e.currentTarget).data("bar"));
     const bar = $(e.currentTarget).data("bar");
     openProduct(bar);
   });
 
-  $("#product-view").on('click', '.back-btn', () => {
-    $("#product-view").addClass("d-none");
-  })
+  // onclick back from product card
+  $("#product-view").on("click", ".back-btn", () => {
+    backBtn();
+  });
+
+  $("#product-view").on("click", ".minus", () => {
+    if (tempPosition.amount > 0) {
+      tempPosition.amount--;
+      $("#product-view .ranger .amount").text(tempPosition.amount);
+    }
+  });
+
+  $("#product-view").on("click", ".plus", () => {
+    tempPosition.amount++;
+    $("#product-view .ranger .amount").text(tempPosition.amount);
+  });
+
+  $("#product-view").on("click", ".to-cart", () => {
+    // alert("to-cart");
+    receiptService.addProductToReceipt(tempPosition);
+    tempPosition = null;
+    backBtn();
+  });
+  $("#product-view").on("click", ".pay-one-click", () => {
+    alert("pay-one-click");
+  });
 });
+
+function backBtn() {
+  $("#product-view").addClass("d-none");
+}
 
 function loadData() {
   catalogService.getProductsByFilter(
@@ -77,7 +106,12 @@ function loadData() {
 
 function openProduct(bar) {
   catalogService.getProdcutByBar(bar, (product) => {
-    // console.log('PRODUCT', product)
+    tempPosition = {
+      bar: bar,
+      price: product.price,
+      amount: 1,
+    };
+
     const productDOM = ` 
       <div class="container">
         <div class="back-btn d-flex ml-2">
@@ -86,7 +120,9 @@ function openProduct(bar) {
         </div>
         <div class="row product">
           <div class="col-4">
-            <img src="./images/catalog/${product.img}" alt="" width="100%" height="100%" />
+            <img src="./images/catalog/${
+              product.img
+            }" alt="" width="100%" height="100%" />
           </div>
           <div class="col-8">
             <div class="row title">
@@ -98,28 +134,34 @@ function openProduct(bar) {
               <div class="col-12">
                 <div class="ranger d-flex">
                   <div class="btn minus">-</div>
-                  <div class="my-auto mx-3">1</div>
+                  <div class="my-auto mx-3 amount">1</div>
                   <div class="btn plus">+</div>
                 </div>
               </div>
             </div>
             <div class="row my-3">
               <div class="col-12 d-flex">
-                <div class="button">В корзину</div>
-                <div class="button ml-2">Купить в один клик</div>
+                <div class="button to-cart">В корзину</div>
+                <div class="button ml-2 pay-one-click">Купить в один клик</div>
               </div>
             </div>
             ${
-              product.descr ?
-              `<div class="row descr">
+              product.descr
+                ? `<div class="row descr">
                 <div class="col-12">
-                  <span>` + product.descr + 
+                  <span>` +
+                  product.descr +
                   `</span
                   >
                 </div>
-              </div>` :
-              ''
+              </div>`
+                : ""
             }
+            <div class="row mt-3 title">
+              <div class="col-12">
+                <span>${product.price} ₽</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
