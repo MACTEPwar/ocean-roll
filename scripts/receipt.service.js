@@ -23,4 +23,12 @@ class ReceiptService {
       0
     );
   }
+
+  getProductByBar(bar) {
+    return this.products.find((f) => f.bar == bar);
+  }
+
+  remove(bar) {
+    this.products = this.products.filter((f) => f.bar != bar);
+  }
 }
