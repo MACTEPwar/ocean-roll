@@ -6,7 +6,10 @@ export class CatalogView {
   tempPosition = null;
 
   onInit() {
-    this.pagingService = new PagingService(this.loadData);
+    this.pagingService = new PagingService(() => {
+      this.loadData();
+    });
+    console.log("PAGING", this.pagingService);
 
     // load default category
     $(".menu-categories .category-item.active").removeClass("active");
@@ -32,7 +35,7 @@ export class CatalogView {
 
     // onclick back from product card
     $("#product-view").on("click", ".back-btn", () => {
-      backBtn();
+      this.backBtn();
     });
 
     // minus product amount
@@ -55,11 +58,12 @@ export class CatalogView {
       this.tempPosition = null;
       this.backBtn();
     });
-    $("#product-view").on("click", ".pay-one-click", () => {
-    });
+    $("#product-view").on("click", ".pay-one-click", () => {});
   }
 
   loadData() {
+    console.log("PAGING", this.pagingService);
+    console.log("PAGING", this);
     window.catalogService.getProductsByFilter(
       {
         skip: this.pagingService.skip,
@@ -119,7 +123,7 @@ export class CatalogView {
         name: product.name,
         img: product.img,
       };
-  
+
       const productDOM = ` 
         <div class="container">
           <div class="back-btn d-flex ml-2">
