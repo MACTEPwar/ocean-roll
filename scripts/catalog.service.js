@@ -1,4 +1,4 @@
-class CatalogService {
+export class CatalogService {
   getProductsByFilter(filter, scCallback, erCallback) {
     this.getMockProducts((data) => {
       filter = filter ?? {};

@@ -1,4 +1,4 @@
-class PagingService {
+export class PagingService {
   constructor(onChangePageCb) {
     this.skip = 0;
     this.take = 8;

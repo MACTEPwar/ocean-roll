@@ -1,4 +1,4 @@
-class CommentService {
+export class CommentService {
   currentComments = [];
 
   constructor() {}

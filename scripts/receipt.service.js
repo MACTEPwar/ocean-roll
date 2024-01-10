@@ -1,4 +1,4 @@
-class ReceiptService {
+export class ReceiptService {
   badgeDOM;
 
   products = [];
