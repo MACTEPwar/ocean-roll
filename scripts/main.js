@@ -5,6 +5,7 @@ import { ReceiptService } from "./receipt.service.js";
 import { CatalogView } from "./catalog.view.js";
 import { MainView } from "./main.view.js";
 import { CartView } from "./cart.view.js";
+import { CheckoutView } from "./checkout.view.js";
 
 window.commentService = new CommentService();
 window.catalogService = new CatalogService();
@@ -14,6 +15,7 @@ window.navigateService = new NavigateService($("#content"));
 window.catalogView = new CatalogView();
 window.mainView = new MainView();
 window.cartView = new CartView();
+window.checkoutView = new CheckoutView();
 
 $(document).ready(() => {
   // console.log('window.catalogService L',window.catalogService)

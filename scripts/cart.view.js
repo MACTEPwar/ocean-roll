@@ -28,6 +28,10 @@ export class CartView {
       this.refreshCartProducts();
       this.refreshTotalsPrice();
     });
+
+    $("button.checkout").on("click", () => {
+      window.navigateService.navigateTo("checkout");
+    });
   }
 
   refreshCartProducts() {
