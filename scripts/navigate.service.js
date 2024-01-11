@@ -4,7 +4,7 @@ import { CheckoutView } from "./checkout.view.js";
 import { MainView } from "./main.view.js";
 
 export class NavigateService {
-  defaultPage = "catalog";
+  defaultPage = "checkout";
 
   routes = [
     {

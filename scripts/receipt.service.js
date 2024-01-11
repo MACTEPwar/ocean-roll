@@ -1,7 +1,7 @@
 export class ReceiptService {
   badgeDOM;
-
   products = [];
+  currentOrderOptions = {};
 
   addProductToReceipt(product) {
     let exProd = this.products.find((f) => f.bar === product.bar);

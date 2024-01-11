@@ -1,4 +1,126 @@
-<h1>Checkout work</h1>
+<div class="container mt-5">
+  <h2 class="mb-4">Оформление заказа</h2>
+
+  <!-- Форма оплаты -->
+  <div class="card">
+    <div class="card-body">
+      <form id="orderForm">
+        <!-- ФИО -->
+        <div class="form-group">
+          <label for="fullName">ФИО</label>
+          <input
+            type="text"
+            class="form-control"
+            id="fullName"
+            placeholder="Иванов Иван Иванович"
+            name="fullName"
+            autocomplete="off"
+          />
+        </div>
+
+        <!-- Номер телефона -->
+        <div class="form-group">
+          <label for="phoneNumber">Номер телефона</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="phoneNumber"
+            placeholder="+7 (999) 999-99-99"
+            name="phoneNumber"
+            autocomplete="off"
+          />
+        </div>
+
+        <!-- Способ оплаты -->
+        <div class="form-group">
+          <label>Способ оплаты</label>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="paymentMethod"
+              id="cashPayment"
+              value="cash"
+              checked
+            />
+            <label class="form-check-label" for="cashPayment"> Наличные </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="paymentMethod"
+              id="cardPayment"
+              value="card"
+            />
+            <label class="form-check-label" for="cardPayment">
+              Безналичный расчет
+            </label>
+          </div>
+        </div>
+
+        <!-- Способ доставки -->
+        <div class="form-group">
+          <label>Способ доставки</label>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="deliveryMethod"
+              id="pickup"
+              value="pickup"
+              checked
+            />
+            <label class="form-check-label" for="pickup"> Самовывоз </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="deliveryMethod"
+              id="courier"
+              value="courier"
+            />
+            <label class="form-check-label" for="courier">
+              Курьерская доставка
+            </label>
+          </div>
+        </div>
+
+        <!-- Выбор магазина -->
+        <div class="form-group" id="storeSelection">
+          <label for="store">Выбор магазина</label>
+          <select class="form-control" id="store" name="store">
+            <option>проспект Победы, 42</option>
+            <option>ул. Торговая, 3</option>
+            <option>ул. веселая, 102/б</option>
+          </select>
+        </div>
+
+        <!-- Адрес доставки -->
+        <div class="form-group d-none" id="deliveryAddress">
+          <label for="address">Адрес доставки</label>
+          <input
+            type="text"
+            class="form-control"
+            id="address"
+            placeholder="Улица, дом, квартира"
+            name="address"
+            autocomplete="off"
+          />
+        </div>
+
+        <!-- Кнопка оформления заказа -->
+        <div class="form-group d-flex">
+          <h3 for="">Всего к оплте <span id="totalPrice">200</span> руб.</h3>
+          <button type="submit" class="btn btn-success ml-auto">
+            Оформить заказ
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 <script>
   app.currentView.onInit();
