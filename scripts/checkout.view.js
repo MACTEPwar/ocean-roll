@@ -1,6 +1,7 @@
 export class CheckoutView {
   constructor(app) {
     this.receiptService = app.providers.get("receiptService");
+    this.navigateService = app.providers.get("navigateService");
   }
   onInit() {
     // fill total price
@@ -31,6 +32,7 @@ export class CheckoutView {
       }
 
       this.receiptService.currentOrderOptions = formData;
+      this.navigateService.navigateTo("complete-order");
 
       e.preventDefault();
     });

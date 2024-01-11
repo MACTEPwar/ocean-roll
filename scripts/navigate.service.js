@@ -1,10 +1,11 @@
 import { CartView } from "./cart.view.js";
 import { CatalogView } from "./catalog.view.js";
 import { CheckoutView } from "./checkout.view.js";
+import { CompleteOrderView } from "./complete-order.view.js";
 import { MainView } from "./main.view.js";
 
 export class NavigateService {
-  defaultPage = "checkout";
+  defaultPage = "main";
 
   routes = [
     {
@@ -26,6 +27,10 @@ export class NavigateService {
     {
       url: "checkout",
       template: CheckoutView,
+    },
+    {
+      url: "complete-order",
+      template: CompleteOrderView,
     },
   ];
 
