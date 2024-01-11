@@ -9,7 +9,6 @@ export class AppView {
     ["navigateService", new NavigateService(this, $("#content"))],
     ["commentService", new CommentService()],
     ["catalogService", new CatalogService()],
-    ["commentService", new CommentService()],
   ]);
 
   currentView;
