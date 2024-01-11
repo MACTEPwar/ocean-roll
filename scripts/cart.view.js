@@ -1,4 +1,9 @@
 export class CartView {
+
+  constructor(app){
+    this.receiptService = app.providers.get("receiptService");
+    this.navigateService = app.providers.get("navigateService");
+  }
   onInit() {
     this.refreshCartProducts();
     this.refreshTotalsPrice();
@@ -6,7 +11,7 @@ export class CartView {
     $("#cart-products").on("click", ".minus", (e) => {
       const productCard = $(e.currentTarget).closest(".product-item");
       const bar = productCard.data("bar");
-      const product = window.receiptService.getProductByBar(bar);
+      const product = this.receiptService.getProductByBar(bar);
       product.amount--;
       this.refreshCartProducts();
       this.refreshTotalsPrice();
@@ -15,7 +20,7 @@ export class CartView {
     $("#cart-products").on("click", ".plus", (e) => {
       const productCard = $(e.currentTarget).closest(".product-item");
       const bar = productCard.data("bar");
-      const product = window.receiptService.getProductByBar(bar);
+      const product = this.receiptService.getProductByBar(bar);
       product.amount++;
       this.refreshCartProducts();
       this.refreshTotalsPrice();
@@ -24,19 +29,19 @@ export class CartView {
     $("#cart-products").on("click", ".delete", (e) => {
       const productCard = $(e.currentTarget).closest(".product-item");
       const bar = productCard.data("bar");
-      window.receiptService.remove(bar);
+      this.receiptService.remove(bar);
       this.refreshCartProducts();
       this.refreshTotalsPrice();
     });
 
     $("button.checkout").on("click", () => {
-      window.navigateService.navigateTo("checkout");
+      this.navigateService.navigateTo("checkout");
     });
   }
 
   refreshCartProducts() {
     $("#cart-products").html("");
-    const products = receiptService.products.map(
+    const products = this.receiptService.products.map(
       (product) =>
         `<div class="card mb-3 br-15 bsh product-item" data-bar="${
           product.bar
@@ -76,6 +81,6 @@ export class CartView {
   }
 
   refreshTotalsPrice() {
-    $("#totalPrice").text(`Итого: ${receiptService.getTotalPrice()} руб`);
+    $("#totalPrice").text(`Итого: ${this.receiptService.getTotalPrice()} руб`);
   }
 }

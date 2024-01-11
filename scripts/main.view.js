@@ -1,6 +1,9 @@
 export class MainView {
+  constructor(app) {
+    this.commentService = app.providers.get("commentService");
+  }
   onInit() {
-    window.commentService.getMockComments((comments) => {
+    this.commentService.getMockComments((comments) => {
       let commentsDOM = comments
         .reduce((acc, currentValue, index) => {
           // Находим текущий подмассив в аккумуляторе

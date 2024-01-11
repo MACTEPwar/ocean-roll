@@ -5,11 +5,15 @@ export class CatalogView {
   currentGroup = "sushi";
   tempPosition = null;
 
+  constructor(app) {
+    this.receiptService = app.providers.get("receiptService");
+    this.catalogService = app.providers.get("catalogService");
+  }
+
   onInit() {
     this.pagingService = new PagingService(() => {
       this.loadData();
     });
-    console.log("PAGING", this.pagingService);
 
     // load default category
     $(".menu-categories .category-item.active").removeClass("active");
@@ -54,7 +58,7 @@ export class CatalogView {
 
     // move product to cart
     $("#product-view").on("click", ".to-cart", () => {
-      window.receiptService.addProductToReceipt(this.tempPosition);
+      this.receiptService.addProductToReceipt(this.tempPosition);
       this.tempPosition = null;
       this.backBtn();
     });
@@ -62,9 +66,8 @@ export class CatalogView {
   }
 
   loadData() {
-    console.log("PAGING", this.pagingService);
-    console.log("PAGING", this);
-    window.catalogService.getProductsByFilter(
+    console.log("PAGING", $("#catalogContent"));
+    this.catalogService.getProductsByFilter(
       {
         skip: this.pagingService.skip,
         take: this.pagingService.take,
@@ -115,7 +118,7 @@ export class CatalogView {
   }
 
   openProduct(bar) {
-    window.catalogService.getProdcutByBar(bar, (product) => {
+    this.catalogService.getProdcutByBar(bar, (product) => {
       this.tempPosition = {
         bar: bar,
         price: product.price,
