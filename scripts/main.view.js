@@ -6,16 +6,11 @@ export class MainView {
     this.commentService.getMockComments((comments) => {
       let commentsDOM = comments
         .reduce((acc, currentValue, index) => {
-          // Находим текущий подмассив в аккумуляторе
           let currentChunkIndex = Math.floor(index / 3);
           let currentChunk = acc[currentChunkIndex];
-
-          // Если подмассив еще не существует, создаем его
           if (!currentChunk) {
             currentChunk = acc[currentChunkIndex] = [];
           }
-
-          // Добавляем текущий элемент в подмассив
           currentChunk.push(currentValue);
 
           return acc;
